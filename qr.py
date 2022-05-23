@@ -19,7 +19,7 @@ def generator():
 
 
 
-#-------------gui
+#---------gui
 
 qrcode = tk.Tk()
 qrcode.title("QR code Generator")
