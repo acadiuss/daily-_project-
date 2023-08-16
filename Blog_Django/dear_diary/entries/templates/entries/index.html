@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dear Diary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .hero {
+            background-color: #35424a;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .entry {
+            background-color: white;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .entry-date {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .add-entry {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .entry-author {
+            color: #555;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="hero-title">
+                    Dear Diary
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="add-entry">
+                <a class="button is-primary" href="{% url 'add' %}">Add New Entry</a>
+            </div>
+
+            {% for entry in entries %}
+            <div class="entry">
+                <p class="entry-date">{{ entry.date_posted }}</p>
+                <p class="entry-author">Author: {{ entry.author }}</p>
+                <p>{{ entry.text }}</p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+    <footer class="footer">
+    </footer>
+</body>
+
+</html>
