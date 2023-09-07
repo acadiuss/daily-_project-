@@ -1,0 +1,11 @@
+def euclidean_algorithm(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+# Poproszenie użytkownika o wprowadzenie wartości a i b
+a = int(input("Podaj wartość a: "))
+b = int(input("Podaj wartość b: "))
+
+nwd = euclidean_algorithm(a, b)
+print(f"Największy wspólny dzielnik liczby {a} i {b} wynosi {nwd}")
