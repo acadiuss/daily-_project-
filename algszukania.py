@@ -5,8 +5,9 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 class RysowanieAplikacja:
+    
     def __init__(self, okno_glowne):
-        self.okno_glowne = okno_glowne
+        self.okno_glowne = okno_glowne   
         self.okno_glowne.title("Aplikacja do rysowania")
 
         self.frame_lewy = Frame(okno_glowne, width=150)
